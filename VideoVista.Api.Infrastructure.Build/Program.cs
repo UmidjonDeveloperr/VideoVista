@@ -48,7 +48,7 @@ var githubPipeline = new GithubPipeline
 
 						TargetDotNetVersion = new TargetDotNetVersion
 						{
-							DotNetVersion = "6.0.204",
+							DotNetVersion = "6.0.421",
 							IncludePrerelease = true
 						}
 					},
