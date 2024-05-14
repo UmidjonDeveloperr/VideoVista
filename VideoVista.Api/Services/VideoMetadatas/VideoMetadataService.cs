@@ -27,10 +27,10 @@ namespace VideoVista.Api.Services.VideoMetadatas
 		public async ValueTask<VideoMetadata> ModifyVideoMetadataAsync(VideoMetadata videoMetadata) =>
 			await this.storageBroker.UpdateVideoMetadataAsync(videoMetadata);
 
-		public async ValueTask<VideoMetadata> RemoveVideoMetadataAsync(Guid guid)
+		public async ValueTask<VideoMetadata> RemoveVideoMetadataAsync(Guid Id)
 		{
 			VideoMetadata gettingVideoMetadata =
-				await this.storageBroker.SelectVideoMetadataByIdAsync(guid);
+				await this.storageBroker.SelectVideoMetadataByIdAsync(Id);
 
 			return await this.storageBroker.DeleteVideoMetadataAsync(gettingVideoMetadata);
 		}
