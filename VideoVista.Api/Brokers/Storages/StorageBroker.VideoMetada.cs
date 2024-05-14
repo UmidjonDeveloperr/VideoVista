@@ -16,7 +16,7 @@ namespace VideoVista.Api.Brokers.Storages
 		public IQueryable<VideoMetadata> SelectAllVideoMetadatas() =>
 			SelectAll<VideoMetadata>();
 
-		public async ValueTask<VideoMetadata> SelectVideoMetadataAsync(Guid Id) =>
+		public async ValueTask<VideoMetadata> SelectVideoMetadataByIdAsync(Guid Id) =>
 			await SelectAsync<VideoMetadata>(Id);
 
 		public async ValueTask<VideoMetadata> UpdateVideoMetadataAsync(VideoMetadata videoMetadata) =>

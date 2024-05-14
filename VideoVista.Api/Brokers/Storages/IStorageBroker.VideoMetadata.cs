@@ -9,7 +9,7 @@ namespace VideoVista.Api.Brokers.Storages
 	{
 		ValueTask<VideoMetadata> InsertVideoMetadataAsync(VideoMetadata videoMetadata);
 		IQueryable<VideoMetadata> SelectAllVideoMetadatas();
-		ValueTask<VideoMetadata> SelectVideoMetadataAsync(Guid Id);
+		ValueTask<VideoMetadata> SelectVideoMetadataByIdAsync(Guid Id);
 		ValueTask<VideoMetadata> UpdateVideoMetadataAsync(VideoMetadata videoMetadata);
 		ValueTask<VideoMetadata> DeleteVideoMetadataAsync(VideoMetadata videoMetadata);
 	}
