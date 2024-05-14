@@ -11,6 +11,6 @@ namespace VideoVista.Api.Services.VideoMetadatas
 		IQueryable<VideoMetadata> RetrieveAllVideoMetadatas();
 		ValueTask<VideoMetadata> RetrieveVideoMetadataByIdAsync(Guid Id);
 		ValueTask<VideoMetadata> ModifyVideoMetadataAsync(VideoMetadata videoMetadata);
-		ValueTask<VideoMetadata> RemoveVideoMetadataAsync(Guid guid);
+		ValueTask<VideoMetadata> RemoveVideoMetadataAsync(Guid Id);
 	}
 }
