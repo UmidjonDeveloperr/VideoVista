@@ -22,7 +22,7 @@ namespace VideoVista.Api.Services.VideoMetadatas
 			this.storageBroker.SelectAllVideoMetadatas();
 
 		public async ValueTask<VideoMetadata> RetrieveVideoMetadataByIdAsync(Guid Id) =>
-			await this.storageBroker.SelectVideoMetadataAsync(Id);
+			await this.storageBroker.SelectVideoMetadataByIdAsync(Id);
 
 		public async ValueTask<VideoMetadata> ModifyVideoMetadataAsync(VideoMetadata videoMetadata) =>
 			await this.storageBroker.UpdateVideoMetadataAsync(videoMetadata);
@@ -30,7 +30,7 @@ namespace VideoVista.Api.Services.VideoMetadatas
 		public async ValueTask<VideoMetadata> RemoveVideoMetadataAsync(Guid guid)
 		{
 			VideoMetadata gettingVideoMetadata =
-				await this.storageBroker.SelectVideoMetadataAsync(guid);
+				await this.storageBroker.SelectVideoMetadataByIdAsync(guid);
 
 			return await this.storageBroker.DeleteVideoMetadataAsync(gettingVideoMetadata);
 		}
