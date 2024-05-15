@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
+using VideoVista.Api.Models.VideoMetadatas;
 
 namespace VideoVista.Api.Brokers.Storages
 {
@@ -64,5 +65,10 @@ namespace VideoVista.Api.Brokers.Storages
 
 		public override void Dispose()
 		{ }
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			SeedVideoMetadata(modelBuilder.Entity<VideoMetadata>());
+		}
 	}
 }
