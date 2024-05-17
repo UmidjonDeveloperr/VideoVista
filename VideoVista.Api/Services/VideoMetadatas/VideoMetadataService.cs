@@ -21,10 +21,9 @@ namespace VideoVista.Api.Services.VideoMetadatas
 		public async ValueTask<VideoMetadata> AddVideoMetadataAsync(VideoMetadata videoMetadata) =>
 			await this.storageBroker.InsertVideoMetadataAsync(videoMetadata);
 
-		public ValueTask<VideoMetadata> ModifyVideoMetadataAsync(VideoMetadata videoMetadata)
-		{
-			throw new NotImplementedException();
-		}
+		public async ValueTask<VideoMetadata> ModifyVideoMetadataAsync(VideoMetadata videoMetadata) =>
+			await this.storageBroker.UpdateVideoMetadataAsync(videoMetadata);
+
 
 		public ValueTask<VideoMetadata> RemoveVideoMetadataAsync(Guid Id)
 		{
