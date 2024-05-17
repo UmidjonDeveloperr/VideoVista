@@ -29,6 +29,15 @@ namespace VideoVista.Api.Tests.Unit.Services.VideoMetadatas
 				loggingBroker: this.loggingBrokerMock.Object);
         }
 
+
+
+		private static int GetRandomNumber() =>
+			new IntRange(min: 0, max: 9).GetValue();
+
+		private static IQueryable<VideoMetadata> CreateRandomVideoMetadatas() =>
+			CreateVideoMetadataFiller(date: GetRandomDateTimeOffset)
+				.Create(count: GetRandomNumber()).AsQueryable<VideoMetadata>();
+
 		private static VideoMetadata CreateRandomVideoMetadata() =>
 			CreateVideoMetadataFiller(date: GetRandomDateTimeOffset).Create();
 
