@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using VideoVista.Api.Brokers.Loggings;
 using VideoVista.Api.Brokers.Storages;
 using VideoVista.Api.Models.VideoMetadatas;
 
@@ -9,10 +10,12 @@ namespace VideoVista.Api.Services.VideoMetadatas
 	public class VideoMetadataService : IVideoMetadataService
 	{
 		private readonly IStorageBroker storageBroker;
+		private readonly ILoggingBroker loggingBroker;
 
-		public VideoMetadataService(IStorageBroker storageBroker)
+		public VideoMetadataService(IStorageBroker storageBroker, ILoggingBroker loggingBroker)
 		{
 			this.storageBroker = storageBroker;
+			this.loggingBroker = loggingBroker;
 		}
 
 		public async ValueTask<VideoMetadata> AddVideoMetadataAsync(VideoMetadata videoMetadata) =>
