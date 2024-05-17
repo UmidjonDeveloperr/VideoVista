@@ -31,10 +31,9 @@ namespace VideoVista.Api.Services.VideoMetadatas
 			throw new NotImplementedException();
 		}
 
-		public IQueryable<VideoMetadata> RetrieveAllVideoMetadatas()
-		{
-			throw new NotImplementedException();
-		}
+		public IQueryable<VideoMetadata> RetrieveAllVideoMetadatas() =>
+			this.storageBroker.SelectAllVideoMetadatas();
+
 
 		public ValueTask<VideoMetadata> RetrieveVideoMetadataByIdAsync(Guid Id)
 		{
