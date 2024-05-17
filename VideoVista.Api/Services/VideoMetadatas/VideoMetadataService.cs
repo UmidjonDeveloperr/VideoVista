@@ -35,9 +35,9 @@ namespace VideoVista.Api.Services.VideoMetadatas
 			this.storageBroker.SelectAllVideoMetadatas();
 
 
-		public ValueTask<VideoMetadata> RetrieveVideoMetadataByIdAsync(Guid Id)
-		{
-			throw new NotImplementedException();
-		}
+		public async ValueTask<VideoMetadata> RetrieveVideoMetadataByIdAsync(Guid Id) =>
+			await this.storageBroker.SelectVideoMetadataByIdAsync(Id);
+
+
 	}
 }
